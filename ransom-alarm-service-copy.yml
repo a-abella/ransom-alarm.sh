@@ -1,0 +1,16 @@
+---
+- hosts: sambas
+  tasks:
+  - name: Copy Ransom Alarm systemd service file to hosts 
+    copy:
+      src="/etc/ansible/roles/sambas/resources/ransom-alarm.service" 
+      dest="/usr/lib/systemd/system/ransom-alarm.service" 
+      mode="0644"
+      #state="absent"
+    #service:
+      #name="ransom-alarm"
+      #state="started"
+      #state="stopped"
+      #enabled="yes"
+      #enabled="no"
+...

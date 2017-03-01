@@ -1,0 +1,9 @@
+[Unit]
+Description=Ransomware Alarm watch and notification service
+
+[Service]
+Type=simple
+ExecStart=/root/scripts/maintenance/ransom-alarm.sh
+
+[Install]
+WantedBy=multi-user.target

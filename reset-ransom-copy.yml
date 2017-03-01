@@ -1,0 +1,13 @@
+---
+- include: "/etc/ansible/roles/sambas/cron/reset-ransom-alarm-cron.yml"
+
+- name: Copy ransom alarm reset script and set cron
+  hosts: sambas
+  tasks:
+  - name: Copy ransom alarm reset script to hosts 
+    copy:
+      src="/etc/ansible/roles/sambas/scripts/reset-ransom-alarm.sh" 
+      dest="/root/scripts/maintenance/reset-ransom-alarm.sh" 
+      mode="0755"
+      #state=absent
+...

@@ -1,0 +1,16 @@
+---
+- hosts: sambas
+  tasks:
+  - name: Copy Ransom Alarm watch script to hosts 
+    copy:
+      src="/etc/ansible/roles/sambas/scripts/ransom-alarm.sh" 
+      dest="/root/scripts/maintenance/ransom-alarm.sh" 
+      mode="0755"
+      #state="absent"
+    #service:
+      #name="ransom-alarm"
+      #state="started"
+      #state="stopped"
+      #enabled="yes"
+      #enabled="no"
+...

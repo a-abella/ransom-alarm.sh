@@ -1,0 +1,18 @@
+---
+- include: "/etc/ansible/roles/sambas/cron/check-ransom-alarm-cron.yml"
+
+- hosts: sambas
+  tasks:
+  - name: Copy Ransom Alarm is-running check to hosts 
+    copy:
+      src="/etc/ansible/roles/sambas/scripts/check-ransom-alarm-running.sh" 
+      dest="/root/scripts/maintenance/check-ransom-alarm-running.sh" 
+      mode="0755"
+      #state="absent"
+    #service:
+      #name="ransom-alarm"
+      #state="started"
+      #state="stopped"
+      #enabled="yes"
+      #enabled="no"
+...
